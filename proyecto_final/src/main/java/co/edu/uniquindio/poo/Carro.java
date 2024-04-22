@@ -8,6 +8,12 @@ package co.edu.uniquindio.poo;
  * Licencia GNU/GPL v3.0
  */
 
-public class Carro {
-    
+public class Carro extends Vehiculo {
+
+    /*
+     * Método constructor de la clase Carro
+     */
+    public Carro(String placa, String modelo, Propietario propietario) {
+        super(placa, modelo, propietario);
+    }
 }
