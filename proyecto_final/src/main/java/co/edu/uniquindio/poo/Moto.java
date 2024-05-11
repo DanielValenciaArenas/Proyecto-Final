@@ -26,6 +26,9 @@ public class Moto extends Vehiculo {
         return tipoMoto;
     }
 
+    /*
+     * HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+     */
     
     
     

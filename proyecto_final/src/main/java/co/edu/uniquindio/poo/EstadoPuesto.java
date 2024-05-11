@@ -10,6 +10,7 @@ package co.edu.uniquindio.poo;
 
 public enum EstadoPuesto {
     VACIO, 
-    OCUPADO
+    OCUPADO;
     
 }
+
