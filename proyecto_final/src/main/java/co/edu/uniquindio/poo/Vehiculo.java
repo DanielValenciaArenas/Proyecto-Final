@@ -41,9 +41,6 @@ public abstract class Vehiculo {
     public Propietario getPropietario() {
         return propietario;
     }
-
-    
-    
     
     
 }
