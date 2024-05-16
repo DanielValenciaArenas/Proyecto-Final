@@ -17,6 +17,8 @@ public class Moto extends Vehiculo {
     public Moto(String placa, String modelo, Propietario propietario, TipoMoto tipoMoto) {
         super(placa, modelo, propietario);
         this.tipoMoto = tipoMoto;
+
+        assert tipoMoto == TipoMoto.CLASICA && tipoMoto == TipoMoto.HIBRIDA;
     }
 
     /*
@@ -26,10 +28,4 @@ public class Moto extends Vehiculo {
         return tipoMoto;
     }
 
-    /*
-     * HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA OMG
-     */
-    
-    
-    
 }
