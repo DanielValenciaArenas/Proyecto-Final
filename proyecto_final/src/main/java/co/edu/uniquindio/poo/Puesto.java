@@ -11,8 +11,8 @@ package co.edu.uniquindio.poo;
 public class Puesto {
     private final int posicionI;
     private final int posicionJ;
-    private final EstadoPuesto estadoPuesto;
-    private final Vehiculo vehiculo;
+    private  EstadoPuesto estadoPuesto;
+    private  Vehiculo vehiculo;
 
     /*
      * Método constructor de la clase Puesto
@@ -51,7 +51,24 @@ public class Puesto {
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
+
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
     
+    public void setEstadoPuesto(EstadoPuesto estadoPuesto) {
+        this.estadoPuesto = estadoPuesto;
+    }
+
+       /*
+     * Método para verificar si el puesto está ocupado
+     */
+    
+     public boolean estaOcupado(){
+        return estadoPuesto == EstadoPuesto.OCUPADO;
+     }
+
+
 
     
 

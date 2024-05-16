@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 public class Registro {
     private final LocalDateTime momentoEntrada;
-    private final LocalDateTime momentoSalida;
+    private  LocalDateTime momentoSalida;
     private final Puesto puesto;
     private final Vehiculo vehiculo;
     private final Tarifa tarifa;
@@ -64,11 +64,20 @@ public class Registro {
         return tarifa;
     }
 
+    public void setMomentoSalida(LocalDateTime momentoSalida) {
+        this.momentoSalida = momentoSalida;
+    }
+
+
     /*
      * Método que define el precio a pagar por el uso del parqueadero
      */
     public double costoTotalEstacionamiento() {
 
+
+        if (momentoSalida == null) {
+            throw new IllegalStateException("El momento de salida no ha sido establecido.");
+        }
         Duration duracion = Duration.between(momentoEntrada, momentoSalida);
         long horas = duracion.toHours();
         double tarifaPorHora = tarifa.getPrecioTarifa(vehiculo);
