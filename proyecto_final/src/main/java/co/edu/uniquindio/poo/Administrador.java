@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo;
 /*
  * Clase que contiene el nombre y la funcionalidad del administrador
  * 
+ * @authors: Allison López, Luisa Gómez, Daniel Valencia
  * @since 2024
  * Licencia GNU/GPL v3.0
  */
