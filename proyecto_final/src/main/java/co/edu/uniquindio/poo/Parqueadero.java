@@ -1,6 +1,4 @@
 package co.edu.uniquindio.poo;
-
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -68,38 +66,20 @@ import java.util.LinkedList;
         return puestosMatriz[posicionI][posicionJ].getEstadoPuesto() == EstadoPuesto.VACIO;
     }
 
-
-    /*
-     * Método para registrar el ingreso de un vehículo al parqueadero
-     */
-    public void registrarIngreso(LocalDateTime momentoEntrada, Puesto puesto, Vehiculo vehiculo) {
-        if (puesto.getEstadoPuesto() == EstadoPuesto.VACIO) {
-            Registro registro = new Registro(momentoEntrada, null, puesto, vehiculo, tarifa);
-            listaRegistros.add(registro);
-            puesto.setEstadoPuesto(EstadoPuesto.OCUPADO);
-            puesto.setVehiculo(vehiculo);
+    public String identificarPropietario(int posicionI, int posicionJ) {
+        assert (posicionI >= 0 && posicionI < puestosMatriz.length && posicionJ >= 0 && posicionJ < puestosMatriz[0].length) : "Coordenadas del puesto fuera de rango.";
+    
+        Puesto puesto = puestosMatriz[posicionI][posicionJ];
+        Vehiculo vehiculo = puesto.getVehiculo();
+    
+        if (vehiculo != null) {
+            return vehiculo.getPropietario().getNombre();
         } else {
-            throw new IllegalStateException("El puesto no está disponible.");
+            return "No hay vehículo en el puesto especificado";
         }
     }
-    /*
-     * Método para registrar la salida de un vehículo al parqueadero
-     */
-
-    public void registrarSalida(LocalDateTime momentoSalida, Puesto puesto) {
-        for (Registro registro : listaRegistros) {
-            if (registro.getPuesto().equals(puesto) && registro.getMomentoSalida() == null) {
-                registro.setMomentoSalida(momentoSalida);
-                puesto.setEstadoPuesto(EstadoPuesto.VACIO);
-                puesto.setVehiculo(null);
-                return;
-            }
-        }
-        throw new IllegalStateException("No se encontró un registro de entrada para el puesto especificado.");
+    
+    
     }
-    
-    
-    
 
-    
-}
+

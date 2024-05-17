@@ -9,8 +9,7 @@ package co.edu.uniquindio.poo;
  */
 
 public class Puesto {
-    private final int posicionI;
-    private final int posicionJ;
+
     private  EstadoPuesto estadoPuesto;
     private  Vehiculo vehiculo;
 
@@ -18,26 +17,10 @@ public class Puesto {
      * Método constructor de la clase Puesto
      */
     public Puesto(int posicionI, int posicionJ, EstadoPuesto estadoPuesto, Vehiculo vehiculo) {
-        this.posicionI = posicionI;
-        this.posicionJ = posicionJ;
+
         this.estadoPuesto = estadoPuesto;
         this.vehiculo = vehiculo;
     }
-
-    /*
-     * Método para obtener la posición I del puesto
-     */
-    public int getPosicionI() {
-        return posicionI;
-    }
-
-    /*
-     * Método para obtener la posición J del puesto
-     */
-    public int getPosicionJ() {
-        return posicionJ;
-    }
-
     /*
      * Método para obtener el estado del puesto (vacio / ocupado)
      */

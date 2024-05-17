@@ -86,5 +86,33 @@ public class Registro {
         return precioTotal;
     }
 
+     /*
+     * Método para registrar el ingreso de un vehículo al parqueadero
+     */
+    public void registrarIngreso(LocalDateTime momentoEntrada, Puesto puesto, Vehiculo vehiculo, Tarifa tarifa) {
+        if (puesto.getEstadoPuesto() == EstadoPuesto.VACIO) {
+            puesto.setEstadoPuesto(EstadoPuesto.OCUPADO);
+            puesto.setVehiculo(vehiculo);
+        } else {
+            throw new IllegalStateException("El puesto no está disponible.");
+        }
+    }
+
+    /*
+     * Método para registrar la salida de un vehículo al parqueadero
+     */
+
+     public void registrarSalida(LocalDateTime momentoSalida, Puesto puesto) {
+        if (this.momentoSalida == null) {
+            this.momentoSalida = momentoSalida;
+            puesto.setEstadoPuesto(EstadoPuesto.VACIO);
+            puesto.setVehiculo(null);
+        } else {
+            throw new IllegalStateException("El vehículo ya ha sido registrado como salido.");
+        }
+    }
+    
+
+
     
 }
